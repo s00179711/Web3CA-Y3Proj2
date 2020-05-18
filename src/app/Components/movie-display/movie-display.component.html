@@ -1,0 +1,8 @@
+
+<div *ngIf="movieData" class="ui raised">
+    <h3 *ngIf="movieData">Movie:{{movieData.Title}}</h3>
+    <p *ngIf="movieData">Year:{{movieData.Year}}</p>
+    <img *ngIf="movieData" src={{movieData.Poster}} [style.height.px]='imageHeight'>
+    <button *ngIf="authGuard.canPost(user)" class="btn btn-elegant btn-rounded btn-sm my-0 waves-effect waves-light" (click)="recommendThisMovie()">Recommend</button>
+    <button *ngIf="authGuard.canEdit(user)" class="btn btn-elegant btn-rounded btn-sm my-0 waves-effect waves-light" (click)="pickThisMovie()">Select</button>
+</div>
